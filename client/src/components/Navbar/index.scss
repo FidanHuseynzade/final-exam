@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.navbar {
+    max-width: 1300px;
+    margin: 0 auto;
+
+    .pages {
+        .page {
+            display: block;
+
+            .btn {
+                margin-right: 7px;
+                transition: 0.3s;
+            }
+
+            .btn:hover {
+                color: #E45E90;
+            }
+        }
+
+        .menu {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width:600px) {
+
+        .page {
+            display: none;
+        }
+
+        .menu {
+            display: block;
+        }
+    }

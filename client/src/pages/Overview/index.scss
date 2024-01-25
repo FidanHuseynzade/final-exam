@@ -1,0 +1,10 @@
+.overview{
+    .image{
+        display: flex;
+        object-fit: cover;
+        background-size: cover;
+        img{
+           width: 200px;
+        }
+    }
+}

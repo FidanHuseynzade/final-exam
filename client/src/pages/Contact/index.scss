@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Libre+Baskerville&family=Oswald:wght@200&family=Quicksand&display=swap');
+.contact{
+    position: relative;
+    overflow: hidden;
+    color: white;
+    img{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .textt{
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        h2{
+            font-family: 'Dancing Script', cursive;
+            font-weight: bolder;
+    font-size: 55px;
+
+        }
+        .buttons{
+            .order{
+                font-family: "Quicksand", sans-serif;
+                font-size: 14px;
+                background-color: #F45D96;
+                border: none;
+                padding: 15px 25px;
+                border-radius: 30px;
+                color: white;
+                font-weight: bolder;
+            }
+            .contact{
+                font-family: "Quicksand", sans-serif;
+                font-size: 14px;
+                background-color: white;
+                border: none;
+                padding: 15px 25px;
+                border-radius: 30px;
+                color: #F45D96;
+                font-weight: bolder;
+                margin-left: 7px;
+            }
+        }
+    }
+}
