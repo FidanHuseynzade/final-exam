@@ -19,6 +19,7 @@ const Navbar = () => {
                 <button className='btn'>SHOP</button>
                 <button className='btn'>PAGES</button>
                 <Link className='btn' to={'/add'}>ADD</Link>
+                <Link className='btn' to={'/wishlist'}>WISHLIST</Link>
                 <button className='btn'>CONTACT</button>
             </div>
             <div className="menu">

@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { WishlistItemContext } from "../../context/WishlistItemContext";
 
 const Dinamic = () => {
   const [data, setData] = useState("");
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("Default");
+  const {likeItem,wishlist} = useContext(WishlistItemContext)
 
 //   const filteredData = data
 //     .filter((item) => {
@@ -60,6 +62,7 @@ const Dinamic = () => {
                     <img src={item.image} alt="" />
                     <h5><Link to={`/${item._id}`}>{item.name}</Link></h5>
                     <p>${item.price}</p>
+                    <button onClick={()=>{likeItem(wishlist)}}>Add</button>
                   </div>
                 </div>
               );

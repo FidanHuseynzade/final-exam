@@ -1,0 +1,52 @@
+.footer {
+    max-width: 1300px;
+    margin: 0 auto;
+
+    h4 {
+        font-family: "Libre Baskerville";
+    }
+
+    p {
+        font-family: "Quicksand", sans-serif;
+    }
+
+    .first {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #EAEAEA;
+
+        .media {
+            display: flex;
+        }
+    }
+
+    .second {
+        margin: 20px;
+
+        .container {
+            .row {
+                .col-12 {
+                    padding: 15px auto;
+
+                    input {
+                        border: none;
+                        border-bottom: 1px solid black;
+                    }
+
+                    button {
+                        border: none;
+                        background-color: transparent;
+                        font-family: "Quicksand", sans-serif;
+                        font-weight: bolder;
+                        border-bottom: 1px solid black;
+                    }
+                }
+            }
+        }
+    }
+
+    .third {
+        border-top: 1px solid #EAEAEA;
+        text-align: center;
+    }
+}

@@ -1,10 +1,47 @@
-.overview{
-    .image{
+.overview {
+    .container {
         display: flex;
+        justify-content: space-between;
         object-fit: cover;
         background-size: cover;
-        img{
-           width: 200px;
+
+        img {
+            width: 500px;
         }
+
+        .testimonials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            img {
+                width: 80px;
+                margin: 10px 0;
+            }
+
+            p {
+                font-family: "Libre Baskerville", cursive;
+                font-size: 23px;
+            }
+
+            h4 {
+                font-family: "Libre Baskerville", serif;
+                font-size: 20px;
+            }
+
+            span {
+                font-family: ' Quicksand', sans-serif;
+                color: gray;
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width:800px) {
+    .overview {
+        display: none;
     }
 }
