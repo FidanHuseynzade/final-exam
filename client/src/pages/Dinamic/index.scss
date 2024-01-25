@@ -4,6 +4,16 @@
     text-align: center;
     .inputs{
         margin: 10px 0;
+        display: flex;
+        font-family: "Quicksand", sans-serif;
+        justify-content: center;
+        input {
+            border: none;
+            border-bottom: 1px solid black;
+        }
+        label{
+            margin-left: 17px;
+        }
     }
     span{
         color: #E45E90;
@@ -22,6 +32,17 @@
                 height: 100%;
                 object-fit: cover;
                 overflow: hidden;
+            }
+            button{
+                font-family: "Quicksand", sans-serif;
+                font-size: 18px;
+                background-color: #F45D96;
+                border: none;
+                padding: 10px ;
+                border-radius: 30px;
+                color: white;
+                font-weight: bolder;
+                margin-bottom: 7px;
             }
         }
     }
