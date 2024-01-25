@@ -1,16 +1,16 @@
-import React from 'react'
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
-import {Outlet} from 'react-router-dom'
+import React from "react";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import { Outlet } from "react-router-dom";
 
 const UserRoot = () => {
   return (
     <>
-    <Navbar/>
-    <Outlet/>
-    <Footer/>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default UserRoot
+export default UserRoot;

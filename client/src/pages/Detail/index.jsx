@@ -1,11 +1,13 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.scss";
+// import { WishlistItemContext } from "../../context/WishlistItemContext";
 
 const Detail = () => {
   const { id } = useParams();
+//   const { likeItem, wishlist } = useContext(WishlistItemContext);
   const [data, setData] = useState();
   useEffect(() => {
     async function fetchData() {
@@ -24,6 +26,13 @@ const Detail = () => {
               <h1>{data.name}</h1>
               <p>${data.price}</p>
               <Link to={"/"}>Back</Link>
+              {/* <button
+                onClick={() => {
+                  likeItem(wishlist);
+                }}
+              >
+                Add
+              </button> */}
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { WishlistItemContext } from "../../context/WishlistItemContext";
+import React, { useContext } from "react";
+import Button from "@mui/material/Button";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -7,63 +7,63 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { Helmet } from "react-helmet";
+import { WishlistItemContext } from "../../context/WishlistItemContext";
 
 const Wishlist = () => {
-  const [rows, setRows] = useState("");
-  const { deleteItem, wishlist, setWishlist } = useContext(WishlistItemContext);
+  const { wishlist, deleteItem } = useContext(WishlistItemContext);
 
-  useEffect(() => {
-    async function fetchData() {
-      const getWishlist = await axios.get(
-        "http://localhost:3030/flower",
-        wishlist
-      );
-      setRows(getWishlist);
-    }
-    fetchData();
-  }, []);
   return (
     <>
       <Helmet>
-        <meta charSet="utf-8" />
         <title>Wishlist</title>
-        <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      <div className="wishlist">
-        <div className="table">
-          <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell align="center">Name</TableCell>
-                  <TableCell align="center">Image</TableCell>
-                  <TableCell align="center">Price</TableCell>
-                  <TableCell align="center">Delete</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows &&
-                  rows.map((row) => (
-                    <TableRow
-                      key={row._id}
-                      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                    >
-                      <TableCell align="center">{row.name}</TableCell>
-                      <TableCell align="center">
-                        <img src={row.image} alt="" />
-                      </TableCell>
-                      <TableCell align="center">{row.price}</TableCell>
-                      <TableCell align="center">
-                        <button onClick={()=>deleteItem(wishlist)}><DeleteIcon /></button>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </div>
+      <div style={{ maxWidth: "1120px", margin: "0 auto", padding: "50px 0" }}>
+        <h2 style={{ textAlign: "center", marginBottom: "50px" }}>Wishlist</h2>
+
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell align="center">Image</TableCell>
+                <TableCell align="center">Name</TableCell>
+                <TableCell align="center">Price</TableCell>
+                <TableCell align="center">Delete</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {wishlist &&
+                wishlist.map((data) => (
+                  <TableRow
+                    key={data._id}
+                    sx={{
+                      "&:last-child td, &:last-child th": { border: 0 },
+                    }}
+                  >
+                    <TableCell align="center" component="th" scope="row">
+                      <img
+                        style={{ width: "100px", height: "100px" }}
+                        src={data?.image}
+                        alt={data?.name}
+                      />
+                    </TableCell>
+                    <TableCell align="center" component="th" scope="row">
+                      {data?.name}
+                    </TableCell>
+                    <TableCell align="center">{data?.price}</TableCell>
+                    <TableCell align="center">
+                      <Button
+                        onClick={() => deleteItem(data)}
+                        variant="contained"
+                      >
+                        Delete
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </div>
     </>
   );

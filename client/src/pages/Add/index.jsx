@@ -22,7 +22,6 @@ const validationSchema = yup.object({
 });
 
 const Add = () => {
-
     const [rows, setRows] = useState([])
     useEffect(()=>{
         async function fetchData(){
@@ -108,6 +107,7 @@ const Add = () => {
                 <TableCell align="center">Name</TableCell>
                 <TableCell align="center">Image</TableCell>
                 <TableCell align="center">Price</TableCell>
+                <TableCell align="center">Delete</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -119,6 +119,7 @@ const Add = () => {
                   <TableCell align="center">{row.name}</TableCell>
                   <TableCell align="center"><img src={row.image} alt="" /></TableCell>
                   <TableCell align="center">{row.price}</TableCell>
+                  <TableCell align="center"><button>Delete</button></TableCell>
                 </TableRow>
               ))}
             </TableBody>

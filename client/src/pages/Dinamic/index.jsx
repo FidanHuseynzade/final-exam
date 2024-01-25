@@ -6,25 +6,25 @@ import { Link } from "react-router-dom";
 import { WishlistItemContext } from "../../context/WishlistItemContext";
 
 const Dinamic = () => {
-    const [data, setData] = useState([]);
-    const [search, setSearch] = useState("");
-    const [filter, setFilter] = useState("Default");
-    const { likeItem } = useContext(WishlistItemContext)
-  
-    const filteredData = data
-      .filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
-      .sort((a, b) => {
-        switch (filter) {
-          case "A-Z":
-            return a.name.localeCompare(b.name);
-          case "Z-A":
-            return b.name.localeCompare(a.name);
-          case "Price":
-            return a.price - b.price;
-          default:
-            return 0;
-        }
-      });
+  const [data, setData] = useState([]);
+  const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("Default");
+  const { likeItem } = useContext(WishlistItemContext);
+
+  const filteredData = data
+    .filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
+    .sort((a, b) => {
+      switch (filter) {
+        case "A-Z":
+          return a.name.localeCompare(b.name);
+        case "Z-A":
+          return b.name.localeCompare(a.name);
+        case "Price":
+          return a.price - b.price;
+        default:
+          return 0;
+      }
+    });
 
   useEffect(() => {
     async function fetchData() {
@@ -45,7 +45,7 @@ const Dinamic = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
 
-        <label>Sort</label>
+        <label>Filter</label>
         <select value={filter} onChange={(e) => setFilter(e.target.value)}>
           <option value="A-Z">A-Z</option>
           <option value="Z-A">Z-A</option>
@@ -65,13 +65,7 @@ const Dinamic = () => {
                       <Link to={`/${item._id}`}>{item.name}</Link>
                     </h5>
                     <p>${item.price}</p>
-                    <button
-                      onClick={() => {
-                        likeItem(wishlist);
-                      }}
-                    >
-                      Add
-                    </button>
+                    <button onClick={() => likeItem(item)}>Add</button>
                   </div>
                 </div>
               );

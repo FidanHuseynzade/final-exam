@@ -13,7 +13,6 @@
 
     .pages {
         .page {
-            display: block;
 
             .btn {
                 margin-right: 7px;
@@ -31,13 +30,17 @@
     }
 }
 
-@media screen and (min-width: 300px) and (max-width:600px) {
+@media screen and (min-width: 100px) and (max-width:600px) {
 
-        .page {
-            display: none;
+        .pages{
+            .page {
+                display: none;
+            }
         }
 
-        .menu {
-            display: block;
+        .pages{
+            .menu {
+                display: block;
+            }
         }
     }

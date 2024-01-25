@@ -4,7 +4,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Footer = () => {
@@ -77,7 +77,8 @@ const Footer = () => {
       </div>
       <div className="third">
         <p>
-          Copyright ©2024 All rights reserved | This template is made with by <FavoriteIcon style={{color:'#E45E90'}}/>
+          Copyright ©2024 All rights reserved | This template is made with by{" "}
+          <FavoriteIcon style={{ color: "#E45E90" }} />
           Colorlib
         </p>
       </div>

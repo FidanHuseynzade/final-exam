@@ -1,4 +1,6 @@
 .overview {
+    max-width: 1300px;
+    margin: 0 auto;
     .container {
         display: flex;
         justify-content: space-between;
@@ -22,7 +24,7 @@
 
             p {
                 font-family: "Libre Baskerville", cursive;
-                font-size: 23px;
+                font-size: 16px;
             }
 
             h4 {
